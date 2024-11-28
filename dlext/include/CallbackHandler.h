@@ -43,11 +43,12 @@ public:
     {
         auto pos_capsule = Wrapper<PositionsTypes>::wrap(_sysview, location, mode);
         auto vel_capsule = Wrapper<VelocitiesMasses>::wrap(_sysview, location, mode);
+        auto tags_capsule = Wrapper<Tags>::wrap(_sysview, location, mode);
         auto rtags_capsule = Wrapper<RTags>::wrap(_sysview, location, mode);
         auto img_capsule = Wrapper<Images>::wrap(_sysview, location, mode);
         auto force_capsule = Wrapper<NetForces>::wrap(_sysview, location, kReadWrite);
 
-        callback(pos_capsule, vel_capsule, rtags_capsule, img_capsule, force_capsule, n);
+        callback(pos_capsule, vel_capsule, tags_capsule, rtags_capsule, img_capsule, force_capsule, n);
     }
 
 private:
